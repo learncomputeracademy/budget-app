@@ -1,352 +1,395 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import 'variables.css';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import "variables.css";
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: var(--font);
-    font-size: 1.6rem;
-    color: var(--primary-color);
-    line-height: var(--lh);
-    font-weight: 400;
-    background-color: var(--light-blue);
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: var(--font);
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  line-height: var(--lh);
+  font-weight: 400;
+  background-color: var(--light-blue);
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 ul,
 li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 a,
 a:visited,
 a:hover {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--dark-blue);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--dark-blue);
 }
 
 .col-6 {
-    width: 50%;
+  width: 50%;
 }
-
 
 /*Main Section Start*/
 main {
-    border: 1px solid #fff;
-    border-radius: var(--radius);
-    background-color: rgba(255, 255, 255, .3);
-    padding: 2rem;
-    margin: 0 3rem;
-    box-shadow: var(--shadow);
+  border: 1px solid #fff;
+  border-radius: var(--radius);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  margin: 0 3rem;
+  box-shadow: var(--shadow);
 
-    display: grid;
-    grid-template-columns: 13rem 100rem;
+  display: grid;
+  grid-template-columns: 13rem 100rem;
 }
 
 main .menu-bar {
-    background-color: var(--light-blue);
-    text-align: center;
-    border-radius: var(--radius) 0 0 var(--radius);
-    padding: 2rem;
-    margin: 0;
+  background-color: var(--light-blue);
+  text-align: center;
+  border-radius: var(--radius) 0 0 var(--radius);
+  padding: 2rem;
+  margin: 0;
 }
 
 main .brand {
-    --size: 6rem;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 4rem auto;
+  --size: 6rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 4rem auto;
 }
 
 main .brand a {
-    display: block;
-    font-family: inherit;
-    font-size: 2.5rem;
-    color: #fff;
-    line-height: var(--lh);
-    background: var(--blue);
-    font-weight: 800;
-    padding: 0;
-    margin: 0;
+  display: block;
+  font-family: inherit;
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: var(--lh);
+  background: var(--blue);
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
 }
 
 main .menu-bar ul li {
-    border-radius: var(--radius);
-    margin: 0 0 1.5rem 0;
+  border-radius: var(--radius);
+  margin: 0 0 1.5rem 0;
 }
 
 main .menu-bar ul li a {
-    --size: 60px;
-    width: var(--size);
-    height: var(--size);
-    color: var(--dark-blue);
-    border-radius: var(--radius);
-    padding: 2rem;
-    transition: var(--trans);
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  color: var(--dark-blue);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--trans);
 }
 
 main .menu-bar ul li a.active,
 main .menu-bar ul li a:hover {
-    background-color: var(--blue);
-    color: #fff;
+  background-color: var(--blue);
+  color: #fff;
 }
-
 
 /*App Window*/
 main .app-window {
-    background-color: #fff;
-    padding: 2rem 4rem;
-    border-radius: 0 var(--radius) var(--radius) 0;
+  background-color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 main .app-window header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main .app-window header .title-block h2 {
-    font-family: inherit;
-    font-size: 3rem;
-    color: var(--blue);
-    line-height: var(--lh);
-    padding: 0;
-    margin: 0;
+  font-family: inherit;
+  font-size: 3rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  padding: 0;
+  margin: 0;
 }
 
 main .app-window header .title-block p {
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: #7E8CAC;
-    line-height: var(--lh);
-    padding: 0;
-    margin: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #7e8cac;
+  line-height: var(--lh);
+  padding: 0;
+  margin: 0;
 }
 
 main .app-window header .user-block ul {
-    display: flex;
+  display: flex;
 }
 
 main .app-window header .user-block ul li {
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 main .app-window header .user-block ul li a {
-    font-size: 2rem;
-    color: #7E8CAC;
-    transition: var(--trans);
+  font-size: 2rem;
+  color: #7e8cac;
+  transition: var(--trans);
 }
 
 main .app-window header .user-block ul li a img {
-    width: 3.5rem;
-    height: auto;
-    border-radius: 1rem;
+  width: 3.5rem;
+  height: auto;
+  border-radius: 1rem;
 }
 
 main .app-window header .user-block ul li a:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 /*Daily Transaction Section*/
 
 main .app-window .daily-transaction {
-    margin: 2.5rem 0;
+  margin: 2.5rem 0;
 }
 
 main .app-window .daily-transaction .title-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main .app-window .daily-transaction .title-block h2 {
-    font-family: inherit;
-    font-size: 2rem;
-    color: var(--blue);
-    line-height: var(--lh);
-    margin: 0;
-    padding: 0;
+  font-family: inherit;
+  font-size: 2rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  margin: 0;
+  padding: 0;
 }
 
 main .app-window .daily-transaction .title-block .icon-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main .app-window .daily-transaction .title-block .icon-block a:nth-child(1) {
-    color: #444;
+  color: #444;
 }
 
 main .app-window .daily-transaction .title-block .icon-block a:nth-child(2) {
-    font-size: 3rem;
-    color: var(--blue);
-    margin-left: 3rem;
+  font-size: 3rem;
+  color: var(--blue);
+  margin-left: 3rem;
 }
 
-main .app-window .daily-transaction .title-block .icon-block a:nth-child(2) i.fas {
-    box-shadow: var(--shadow);
-    border-radius: 50%;
-    transition: var(--trans);
+main
+  .app-window
+  .daily-transaction
+  .title-block
+  .icon-block
+  a:nth-child(2)
+  i.fas {
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  transition: var(--trans);
 }
 
-main .app-window .daily-transaction .title-block .icon-block a:nth-child(2):hover i.fas {
-    box-shadow: none;
+main
+  .app-window
+  .daily-transaction
+  .title-block
+  .icon-block
+  a:nth-child(2):hover
+  i.fas {
+  box-shadow: none;
 }
 
 main .app-window .daily-transaction .amount-block {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
 }
 
 main .app-window .daily-transaction .amount-block .block small {
-    color: var(--blue);
-    font-weight: 500;
+  color: var(--blue);
+  font-weight: 500;
 }
 
 main .app-window .daily-transaction .amount-block .block h4 {
-    font-family: inherit;
-    font-size: 1.6rem;
-    color: #444;
-    line-height: var(--lh);
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #444;
+  line-height: var(--lh);
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
 }
 
 main .app-window .daily-transaction .amount-block .block:nth-child(3) h4 {
-    font-family: inherit;
-    font-size: 1.6rem;
-    color: #000;
-    line-height: var(--lh);
-    font-weight: 700;
-    padding: 0;
-    margin: 0;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #000;
+  line-height: var(--lh);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 
 /*Transaction History*/
 main .app-window .transaction-history {
-    margin: 2.5rem 0;
+  margin: 2.5rem 0;
 }
 
 main .app-window .transaction-history .title-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main .app-window .transaction-history .title-block h2 {
-    font-family: inherit;
-    font-size: 2rem;
-    color: var(--blue);
-    line-height: var(--lh);
-    margin: 0 0 2rem 0;
-    padding: 0;
+  font-family: inherit;
+  font-size: 2rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  margin: 0 0 2rem 0;
+  padding: 0;
 }
 
 main .app-window .transaction-history .date {
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: #444;
-    line-height: var(--lh);
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: var(--lh);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
 main .app-window .transaction-history .transaction-desc {
-    margin: 2.5rem 0;
+  margin: 2.5rem 0;
 }
 
 main .app-window .transaction-history .transaction-desc .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 main .app-window .transaction-history .transaction-desc .item .purpose h5 {
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: var(--blue);
-    line-height: var(--lh);
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
-
 
 main .app-window .transaction-history .transaction-desc .item .amount h5 {
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: var(--blue);
-    line-height: var(--lh);
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 
-main .app-window .transaction-history .transaction-desc .item .amount h5.comes-in{
-    color: var(--blue);
+main
+  .app-window
+  .transaction-history
+  .transaction-desc
+  .item
+  .amount
+  h5.comes-in {
+  color: var(--blue);
 }
 
-main .app-window .transaction-history .transaction-desc .item .amount h5.goes-out{
-    color: var(--orange);
+main
+  .app-window
+  .transaction-history
+  .transaction-desc
+  .item
+  .amount
+  h5.goes-out {
+  color: var(--orange);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**/
+/* Add Transaction Section */
+.add-transaction-section {
+  border: 20px solid #edf0f5;
+  border-radius: var(--radius);
+  background-color: #fff;
+  padding: 2rem;
+  margin: 0 3rem;
+  box-shadow: var(--shadow);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-transaction-section .block {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+}
+.close-button {
+  font-size: 3rem;
+  color: var(--blue);
+  margin-left: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+.close-button:active {
+  transform: scale(0.9);
+}
+.add-transaction-section .block .close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+body.defuse main {
+  position: relative;
+}
+body.defuse main:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(53 70 171 / 80%);
+  top: 0;
+  left: 0;
+  backdrop-filter: saturate(180%) blur(5px);
+}
