@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Budget Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -64,12 +65,53 @@
                             <a href="#" title="Email"><i class="far fa-envelope"></i></a>
                         </li>
                         <li>
-<!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
+                            <!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
                             <a href="#" title="User"><img src="images/user.jpg" alt="user"></a>
                         </li>
                     </ul>
                 </div>
             </header>
+
+            <div class="col-6">
+                <div class="daily-transaction">
+                    <div class="title-block">
+                        <h2>Daily Transaction</h2>
+
+                        <div class="icon-block">
+                            <a href="#"><i class="far fa-calendar-alt"></i></a>
+                            <a href="#"><i class="fas fa-plus-circle"></i></a>
+                        </div>
+                    </div> <!-- .title-block -->
+
+                    <div class="amount-block">
+                        <div class="block">
+                            <small>Total Expense</small>
+                            <h4>$120.56</h4>
+                        </div>
+                        <div class="block">
+                            <small>Total Income</small>
+                            <h4>$120.56</h4>
+                        </div>
+                        <div class="block">
+                            <small>Net</small>
+                            <h4>$120.56</h4>
+                        </div>
+                    </div> <!-- .amount-block -->
+                </div> <!-- .daily-transaction -->
+                
+                <div class="transaction-history">
+                    <div class="title-block">
+                        <h2>Transaction history</h2>
+                        
+                        <div class="icon-block">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .col-6 -->
+
         </div>
     </main>
-</body></html>
+</body>
+
+</html>
