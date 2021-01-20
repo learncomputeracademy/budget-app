@@ -329,7 +329,7 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     left: 0;
     top: 0;
     width: 40rem;
-    padding: 3rem;
+    padding: 4rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: #fff;
@@ -340,7 +340,8 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 }
 
 .calendar-ui .content-block {
-    width: 60%
+    width: 100%;
+    background: aliceblue;
 }
 
 .calendar-ui .content-block .month-year-panel {
@@ -352,6 +353,45 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     border-bottom: 1px solid #dcdcdc;
 }
 
+.calendar-ui .content-block .month-year-panel .month {
+    width: 50%;
+/*    background: lime;*/
+}
+.calendar-ui .content-block .month-year-panel .month select{
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    width: 13rem;
+    background: none;
+}
+.calendar-ui .content-block .month-year-panel .month select option{
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #444;
+    line-height: var(--lh);
+    padding: 0;
+    margin: 0;
+}
+.calendar-ui .content-block .month-year-panel .year {
+    width: 50%;
+/*    background: lime;*/
+}
+.calendar-ui .content-block .month-year-panel .year select{
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    width: 13rem;
+    background: none;
+}
+.calendar-ui .content-block .month-year-panel .year select option{
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #444;
+    line-height: var(--lh);
+    padding: 0;
+    margin: 0;
+}
+
 
 .calendar-ui .content-block .day-date-panel .day ul {
     display: flex;
@@ -359,18 +399,30 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     align-items: center;
 }
 
+.calendar-ui .content-block .day-date-panel .day ul li {
+    color: #444;
+    padding: .8rem;
+}
 
-.calendar-ui .content-block .day-date-panel .date ul{
+.calendar-ui .content-block .day-date-panel .date ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     place-items: center;
 }
 
-.calendar-ui .content-block .day-date-panel .date ul li{
-    padding: 1.5rem;
+.calendar-ui .content-block .day-date-panel .date ul li {
+    padding: .8rem;
+    transition: var(--trans);
+    cursor: pointer;
+    border-radius: .6rem;
 }
 
-
+.calendar-ui .content-block .day-date-panel .date ul li.current,
+.calendar-ui .content-block .day-date-panel .date ul li:hover {
+    background-color: var(--blue);
+    color: #fff;
+}
 
 
 
