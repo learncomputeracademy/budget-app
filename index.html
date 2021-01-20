@@ -202,7 +202,7 @@
                         <li>We</li>
                         <li>Th</li>
                         <li>Fr</li>
-                        <li>Sat</li>
+                        <li>Sa</li>
                     </ul>
                 </div>
                 <div class="date">
@@ -241,14 +241,15 @@
                     </ul>
                 </div> <!-- .date -->
                 
-                <div class="time">
-                    <input type="time">
+                <div class="time-panel">
+                    <input type="text" placeholder="HR-MM AM/PM" class="form-control" onfocus="this.type='time'" onblur="this.type='text'">
                 </div>
             </div>
         </div>
-        <div class="sidebar">
-            
-        </div>
+        
+        <button class="calendar-close">
+            <i class="fas fa-times-circle"></i>
+        </button>
     </div>
 
 

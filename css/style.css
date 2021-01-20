@@ -326,10 +326,11 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 /*Calendar UI*/
 .calendar-ui {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 40rem;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: #fff;
@@ -337,11 +338,11 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .calendar-ui .content-block {
     width: 100%;
-    background: aliceblue;
 }
 
 .calendar-ui .content-block .month-year-panel {
@@ -350,48 +351,88 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     align-items: center;
     padding: 1.5rem 0;
     margin: 0;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: .1rem solid #dcdcdc;
 }
 
 .calendar-ui .content-block .month-year-panel .month {
-    width: 50%;
-/*    background: lime;*/
-}
-.calendar-ui .content-block .month-year-panel .month select{
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    width: 13rem;
-    background: none;
-}
-.calendar-ui .content-block .month-year-panel .month select option{
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: #444;
-    line-height: var(--lh);
-    padding: 0;
-    margin: 0;
-}
-.calendar-ui .content-block .month-year-panel .year {
-    width: 50%;
-/*    background: lime;*/
-}
-.calendar-ui .content-block .month-year-panel .year select{
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    width: 13rem;
-    background: none;
-}
-.calendar-ui .content-block .month-year-panel .year select option{
-    font-family: inherit;
-    font-size: 1.4rem;
-    color: #444;
-    line-height: var(--lh);
-    padding: 0;
-    margin: 0;
+    width: calc(50% - .5rem);
+    position: relative;
 }
 
+.calendar-ui .content-block .month-year-panel .month select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border: .1rem solid var(--blue);
+    border-radius: .6rem;
+    outline: 0;
+    width: 13rem;
+    background: none;
+padding: .6rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #444;
+    line-height: var(--lh);
+    margin-right: .5rem;
+    width: 100%;
+}
+
+.calendar-ui .content-block .month-year-panel .month::after {
+    content: '\f107';
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: .5rem;
+    right: 8%;
+    background: none;
+    cursor: pointer;
+    pointer-events: none;
+    color: #444;
+    font-weight: 900;
+}
+
+.calendar-ui .content-block .month-year-panel .year {
+    width: calc(50% - .5rem);
+    position: relative;
+}
+
+.calendar-ui .content-block .month-year-panel .year select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border: .1rem solid var(--blue);
+    border-radius: .6rem;
+    outline: 0;
+    width: 13rem;
+    background: none;
+
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #444;
+    line-height: var(--lh);
+    padding: .6rem;
+    width: 100%;
+
+}
+
+.calendar-ui .content-block .month-year-panel .year::after {
+    content: '\f107';
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: .5rem;
+    right: 8%;
+    background: none;
+    cursor: pointer;
+    pointer-events: none;
+    color: #444;
+    font-weight: 900;
+}
+
+.calendar-ui .content-block .day-date-panel {
+    padding: 0;
+    margin: 0;
+}
 
 .calendar-ui .content-block .day-date-panel .day ul {
     display: flex;
@@ -404,6 +445,10 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     padding: .8rem;
 }
 
+.calendar-ui .content-block .day-date-panel .date {
+    padding: 1.2rem 0;
+}
+
 .calendar-ui .content-block .day-date-panel .date ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -412,10 +457,13 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 }
 
 .calendar-ui .content-block .day-date-panel .date ul li {
-    padding: .8rem;
     transition: var(--trans);
     cursor: pointer;
-    border-radius: .6rem;
+    border-radius: var(--radius);
+    width: 4.1rem;
+    height: 4.1rem;
+    text-align: center;
+    line-height: 4.1rem;
 }
 
 .calendar-ui .content-block .day-date-panel .date ul li.current,
@@ -424,15 +472,75 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     color: #fff;
 }
 
+.calendar-ui .content-block .day-date-panel .time-panel {
+    padding: 1.5rem 0;
+    border-top: .1rem solid #dcdcdc;
+}
 
+.calendar-ui .content-block .day-date-panel .time-panel input.form-control[type="text"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    position: relative;
+    background: none;
+    padding: .5rem;
+    
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: var(--lh);
+    padding: .5rem;
+    border: .1rem solid var(--blue);
+    border-radius: .6rem;
+}
 
+.calendar-ui .content-block .day-date-panel .time-panel input.form-control[type="time"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    position: relative;
+    background: none;
+    padding: .5rem;
+    
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: var(--lh);
+    padding: .5rem;
+    border: .1rem solid var(--blue);
+    border-radius: .6rem;
+}
 
+.calendar-ui .content-block .day-date-panel .time-panel .form-control[type="time"]:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #444;
+}
 
+.calendar-ui .content-block .day-date-panel .time-panel input.form-control[type="text"]::after{
+    content: '\f017';
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    right: 8%;
+    background: none;
+    cursor: pointer;
+    pointer-events: none;
+    color: #444;
+    font-weight: 900;
+}
 
-
-
-
-
+.calendar-ui .calendar-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: var(--blue);
+    font-size: 3rem;
+    cursor: pointer;
+}
 
 
 /**/
