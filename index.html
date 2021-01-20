@@ -1,154 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Budget Tracker</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="menu-bar">
-            <div class="brand">
-                <a href="#">Bt.</a>
-            </div>
+      <div class="menu-bar">
+        <div class="brand">
+          <a href="#">Bt.</a>
+        </div>
+        <ul>
+          <li>
+            <a href="#" class="active">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chart-line"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-credit-card"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-receipt"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-certificate"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-cog"></i></a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-file-import"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="app-window">
+        <header>
+          <div class="title-block">
+            <h2>Overview</h2>
+            <p>Hi John, get your summary of your monthly transaction here</p>
+          </div>
+          <div class="user-block">
             <ul>
-                <li>
-                    <a href="#" class="active">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-chart-line"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-credit-card"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-receipt"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-certificate"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-cog"></i></a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-file-import"></i>
-                    </a>
-                </li>
+              <li>
+                <a href="#" title="Notification"><i class="far fa-bell"></i></a>
+              </li>
+              <li>
+                <a href="#" title="Email"><i class="far fa-envelope"></i></a>
+              </li>
+              <li>
+                <!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
+                <a href="#" title="User"
+                  ><img src="images/user.jpg" alt="user"
+                /></a>
+              </li>
             </ul>
+          </div>
+        </header>
+
+        <div class="col-6">
+          <div class="daily-transaction">
+            <div class="title-block">
+              <h2>Daily Transaction</h2>
+
+              <div class="icon-block">
+                <a href="#"><i class="far fa-calendar-alt"></i></a>
+                <a href="#"><i class="fas fa-plus-circle"></i></a>
+              </div>
+            </div>
+            <!-- .title-block -->
+
+            <div class="amount-block">
+              <div class="block">
+                <small>Total Expense</small>
+                <h4>$122.56</h4>
+              </div>
+              <div class="block">
+                <small>Total Income</small>
+                <h4>$120.56</h4>
+              </div>
+              <div class="block">
+                <small>Net</small>
+                <h4>$120.56</h4>
+              </div>
+            </div>
+            <!-- .amount-block -->
+          </div>
+          <!-- .daily-transaction -->
+
+          <div class="transaction-history">
+            <div class="title-block">
+              <h2>Transaction history</h2>
+
+              <div class="icon-block">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+            <!-- .title-block -->
+            <div class="date">
+              <p>21 January 2021</p>
+            </div>
+            <div class="transaction-desc">
+              <div class="item">
+                <div class="purpose">
+                  <h5>John Doe</h5>
+                  <small>4 January 2021, at 10:45 AM</small>
+                </div>
+                <div class="amount">
+                  <h5 class="comes-in">+ $450.00</h5>
+                  <small>Payment</small>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="item">
+                <div class="purpose">
+                  <h5>Jane Doe</h5>
+                  <small>3 January 2021, at 02:30 PM</small>
+                </div>
+                <div class="amount">
+                  <h5 class="goes-out">- $250.00</h5>
+                  <small>Transfer</small>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="item">
+                <div class="purpose">
+                  <h5>Jack Sparrow</h5>
+                  <small>2 January 2021, at 01:39 PM</small>
+                </div>
+                <div class="amount">
+                  <h5 class="goes-out">- $1250.00</h5>
+                  <small>Transfer</small>
+                </div>
+              </div>
+              <!-- .item -->
+            </div>
+          </div>
         </div>
-        <div class="app-window">
-            <header>
-                <div class="title-block">
-                    <h2>Overview</h2>
-                    <p>Hi John, get your summary of your monthly transaction here</p>
-                </div>
-                <div class="user-block">
-                    <ul>
-                        <li>
-                            <a href="#" title="Notification"><i class="far fa-bell"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" title="Email"><i class="far fa-envelope"></i></a>
-                        </li>
-                        <li>
-                            <!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
-                            <a href="#" title="User"><img src="images/user.jpg" alt="user"></a>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-
-            <div class="col-6">
-                <div class="daily-transaction">
-                    <div class="title-block">
-                        <h2>Daily Transaction</h2>
-
-                        <div class="icon-block">
-                            <a href="#"><i class="far fa-calendar-alt"></i></a>
-                            <a href="#"><i class="fas fa-plus-circle"></i></a>
-                        </div>
-                    </div> <!-- .title-block -->
-
-                    <div class="amount-block">
-                        <div class="block">
-                            <small>Total Expense</small>
-                            <h4>$120.56</h4>
-                        </div>
-                        <div class="block">
-                            <small>Total Income</small>
-                            <h4>$120.56</h4>
-                        </div>
-                        <div class="block">
-                            <small>Net</small>
-                            <h4>$120.56</h4>
-                        </div>
-                    </div> <!-- .amount-block -->
-                </div> <!-- .daily-transaction -->
-
-                <div class="transaction-history">
-                    <div class="title-block">
-                        <h2>Transaction history</h2>
-
-                        <div class="icon-block">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                    </div> <!-- .title-block -->
-                    <div class="date">
-                        <p>21 January 2021</p>
-                    </div>
-                    <div class="transaction-desc">
-                        <div class="item">
-                            <div class="purpose">
-                                <h5>John Doe</h5>
-                                <small>4 January 2021, at 10:45 AM</small>
-                            </div>
-                            <div class="amount">
-                                <h5 class="comes-in">+ $450.00</h5>
-                                <small>Payment</small>
-                            </div>
-                        </div> <!-- .item -->
-
-                        <div class="item">
-                            <div class="purpose">
-                                <h5>Jane Doe</h5>
-                                <small>3 January 2021, at 02:30 PM</small>
-                            </div>
-                            <div class="amount">
-                                <h5 class="goes-out">- $250.00</h5>
-                                <small>Transfer</small>
-                            </div>
-                        </div> <!-- .item -->
-                        
-                        <div class="item">
-                            <div class="purpose">
-                                <h5>Jack Sparrow</h5>
-                                <small>2 January 2021, at 01:39 PM</small>
-                            </div>
-                            <div class="amount">
-                                <h5 class="goes-out">- $1250.00</h5>
-                                <small>Transfer</small>
-                            </div>
-                        </div> <!-- .item -->
-                    </div>
-                </div>
-            </div> <!-- .col-6 -->
-
-        </div>
+        <!-- .col-6 -->
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
