@@ -311,11 +311,11 @@ main .app-window .transaction-history .transaction-desc .item .amount h5 {
     padding: 0;
 }
 
-main .app-window .transaction-history .transaction-desc .item .amount h5.comes-in{
+main .app-window .transaction-history .transaction-desc .item .amount h5.comes-in {
     color: var(--blue);
 }
 
-main .app-window .transaction-history .transaction-desc .item .amount h5.goes-out{
+main .app-window .transaction-history .transaction-desc .item .amount h5.goes-out {
     color: var(--orange);
 }
 
@@ -323,18 +323,52 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 
 
 
+/*Calendar UI*/
+.calendar-ui {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40rem;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-ui .content-block {
+    width: 60%
+}
+
+.calendar-ui .content-block .month-year-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin: 0;
+    border-bottom: 1px solid #dcdcdc;
+}
 
 
+.calendar-ui .content-block .day-date-panel .day ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
+.calendar-ui .content-block .day-date-panel .date ul{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    place-items: center;
+}
 
-
-
-
-
-
-
-
+.calendar-ui .content-block .day-date-panel .date ul li{
+    padding: 1.5rem;
+}
 
 
 
