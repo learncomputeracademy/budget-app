@@ -265,9 +265,88 @@ main .app-window .transaction-history .title-block h2 {
     font-size: 2rem;
     color: var(--blue);
     line-height: var(--lh);
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+main .app-window .transaction-history .date {
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #444;
+    line-height: var(--lh);
+    font-weight: 600;
     margin: 0;
     padding: 0;
 }
+
+main .app-window .transaction-history .transaction-desc {
+    margin: 2.5rem 0;
+}
+
+main .app-window .transaction-history .transaction-desc .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+main .app-window .transaction-history .transaction-desc .item .purpose h5 {
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+
+main .app-window .transaction-history .transaction-desc .item .amount h5 {
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+main .app-window .transaction-history .transaction-desc .item .amount h5.comes-in{
+    color: var(--blue);
+}
+
+main .app-window .transaction-history .transaction-desc .item .amount h5.goes-out{
+    color: var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**/
