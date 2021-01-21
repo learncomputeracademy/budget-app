@@ -43,10 +43,30 @@ a:hover {
     color: var(--dark-blue);
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-2{
+    width: 16.6666%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-10{
+    width: 83.3333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
 .col-6 {
     width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 
 /*Main Section Start*/
 main {
@@ -74,27 +94,15 @@ main .brand {
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto 4rem auto;
 }
 
 main .brand a {
     display: block;
-    font-family: inherit;
-    font-size: 2.5rem;
-    color: #fff;
-    line-height: var(--lh);
-    background: var(--blue);
-    font-weight: 800;
-    padding: 0;
-    margin: 0;
 }
 
 main .menu-bar ul li {
-    border-radius: var(--radius);
+    border-radius: 50%;
     margin: 0 0 1.5rem 0;
 }
 
@@ -103,7 +111,7 @@ main .menu-bar ul li a {
     width: var(--size);
     height: var(--size);
     color: var(--dark-blue);
-    border-radius: var(--radius);
+    border-radius: 50%;
     padding: 2rem;
     transition: var(--trans);
 }
@@ -112,8 +120,12 @@ main .menu-bar ul li a.active,
 main .menu-bar ul li a:hover {
     background-color: var(--blue);
     color: #fff;
+    box-shadow: var(--shadow);
 }
 
+main .menu-bar ul li a:active {
+    transform: scale(.95);
+}
 
 /*App Window*/
 main .app-window {
@@ -126,6 +138,8 @@ main .app-window header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: .1rem solid #dcdcdc;
 }
 
 main .app-window header .title-block h2 {
@@ -163,7 +177,7 @@ main .app-window header .user-block ul li a {
 main .app-window header .user-block ul li a img {
     width: 3.5rem;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 50%;
 }
 
 main .app-window header .user-block ul li a:hover {
@@ -300,6 +314,9 @@ main .app-window .transaction-history .transaction-desc .item .purpose h5 {
     padding: 0;
 }
 
+main .app-window .transaction-history .transaction-desc .item .amount {
+    text-align: right;
+}
 
 main .app-window .transaction-history .transaction-desc .item .amount h5 {
     font-family: inherit;
@@ -338,6 +355,9 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    display: none;
+    /* Default value is FLEX */
 
 }
 
@@ -557,5 +577,180 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 .calendar-ui .calendar-close:focus {
     outline: none;
 }
+
+
+/*Monthly Transaction Section*/
+
+main .app-window .monthly-transaction {
+    margin: 2.5rem 0;
+}
+
+main .app-window .monthly-transaction .title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .title-block h2 {
+    font-family: inherit;
+    font-size: 2rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    margin: 0;
+    padding: 0;
+}
+
+main .app-window .monthly-transaction .expense-block {
+    margin-left: -15px;
+    border-radius: var(--radius);
+    border: .1rem solid #dcdcdc;
+    padding: 1rem;
+}
+
+main .app-window .monthly-transaction .expense-block small {
+    display: block;
+    color: var(--orange);
+    margin-bottom: 2rem;
+}
+
+main .app-window .monthly-transaction .expense-block .chart {
+    margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .expense-block .chart span {
+    display: inline-block;
+    --height: 5rem;
+    height: var(--height);
+    width: .5rem;
+    background: var(--orange);
+    border-radius: 5rem;
+    margin: 0 .2rem;
+}
+
+main .app-window .monthly-transaction .expense-block .amount h4 {
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #000;
+    line-height: var(--lh);
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+main .app-window .monthly-transaction .expense-block .amount small {
+    margin: 0;
+    color: var(--orange);
+}
+
+
+main .app-window .monthly-transaction .income-block {
+    margin-right: -15px;
+    border-radius: var(--radius);
+    border: .1rem solid #dcdcdc;
+    padding: 1rem;
+}
+
+main .app-window .monthly-transaction .income-block small {
+    display: block;
+    color: var(--blue);
+    margin-bottom: 2rem;
+}
+
+main .app-window .monthly-transaction .income-block .chart {
+    margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .income-block .chart span {
+    display: inline-block;
+    --height: 5rem;
+    height: var(--height);
+    width: .5rem;
+    background: var(--blue);
+    border-radius: 5rem;
+    margin: 0 .2rem;
+}
+
+main .app-window .monthly-transaction .income-block .amount h4 {
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #000;
+    line-height: var(--lh);
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+main .app-window .monthly-transaction .income-block .amount small {
+    margin: 0;
+    color: var(--blue);
+}
+
+main .app-window .monthly-transaction .lower-block {
+    margin-top: 2.5rem;
+}
+
+main .app-window .monthly-transaction .lower-block .card {
+    border-radius: var(--radius);
+    border: .1rem solid #dcdcdc;
+    background-color: #FAF7F5;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+main .app-window .monthly-transaction .lower-block .card .col-10{
+    display: flex;
+    align-items: center;
+}
+main .app-window .monthly-transaction .lower-block .card .pie {
+    --height: 3.5rem;
+    --width: 3.5rem;
+    width: var(--width);
+    height: var(--height);
+    border-radius: 50%;
+    background: var(--orange);
+    background-image: conic-gradient(#f0582e 47deg, #dcdcdc 0 360deg);
+}
+
+main .app-window .monthly-transaction .lower-block .card:nth-child(2) .pie {
+    --height: 3.5rem;
+    --width: 3.5rem;
+    width: var(--width);
+    height: var(--height);
+    border-radius: 50%;
+    background: var(--orange);
+    background-image: conic-gradient(#3546AB 120deg, #dcdcdc 0 360deg);
+}
+
+main .app-window .monthly-transaction .lower-block .card .amount{
+    margin-left: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**/
