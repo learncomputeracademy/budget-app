@@ -1,77 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Budget Tracker</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
+</head>
 
   <body class="defuse">
     <main>
-      <div class="menu-bar">
-        <div class="brand">
-          <a href="#">Bt.</a>
-        </div>
-        <ul>
-          <li>
-            <a href="#" class="active">
-              <i class="fas fa-th-large"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-chart-line"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-credit-card"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-receipt"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-certificate"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-cog"></i></a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-file-import"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="app-window">
-        <header>
-          <div class="title-block">
-            <h2>Overview</h2>
-            <p>Hi John, get your summary of your monthly transaction here</p>
-          </div>
-          <div class="user-block">
+        <div class="menu-bar">
+            <div class="brand">
+                <a href="#">Bt.</a>
+            </div>
             <ul>
-              <li>
-                <a href="#" title="Notification"><i class="far fa-bell"></i></a>
-              </li>
-              <li>
-                <a href="#" title="Email"><i class="far fa-envelope"></i></a>
-              </li>
-              <li>
-                <!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
-                <a href="#" title="User"
-                  ><img src="images/user.jpg" alt="user"
-                /></a>
-              </li>
+                <li>
+                    <a href="#" class="active">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-credit-card"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-receipt"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-certificate"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-cog"></i></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-file-import"></i>
+                    </a>
+                </li>
             </ul>
           </div>
         </header>
@@ -108,56 +84,179 @@
           </div>
           <!-- .daily-transaction -->
 
-          <div class="transaction-history">
-            <div class="title-block">
-              <h2>Transaction history</h2>
+            <div class="col-6">
+                <div class="daily-transaction">
+                    <div class="title-block">
+                        <h2>Daily Transaction</h2>
 
-              <div class="icon-block">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-            <!-- .title-block -->
-            <div class="date">
-              <p>21 January 2021</p>
-            </div>
-            <div class="transaction-desc">
-              <div class="item">
-                <div class="purpose">
-                  <h5>John Doe</h5>
-                  <small>4 January 2021, at 10:45 AM</small>
-                </div>
-                <div class="amount">
-                  <h5 class="comes-in">+ $450.00</h5>
-                  <small>Payment</small>
-                </div>
-              </div>
-              <!-- .item -->
+                        <div class="icon-block">
+                            <a href="#"><i class="far fa-calendar-alt"></i></a>
+                            <a href="#"><i class="fas fa-plus-circle"></i></a>
+                        </div>
+                    </div>
+                    <!-- .title-block -->
 
-              <div class="item">
-                <div class="purpose">
-                  <h5>Jane Doe</h5>
-                  <small>3 January 2021, at 02:30 PM</small>
+                    <div class="amount-block">
+                        <div class="block">
+                            <small>Total Expense</small>
+                            <h4>$742.56</h4>
+                        </div>
+                        <div class="block">
+                            <small>Total Income</small>
+                            <h4>$120.56</h4>
+                        </div>
+                        <div class="block">
+                            <small>Net</small>
+                            <h4>$198.56</h4>
+                        </div>
+                    </div>
+                    <!-- .amount-block -->
                 </div>
-                <div class="amount">
-                  <h5 class="goes-out">- $250.00</h5>
-                  <small>Transfer</small>
-                </div>
-              </div>
-              <!-- .item -->
+                <!-- .daily-transaction -->
 
-              <div class="item">
-                <div class="purpose">
-                  <h5>Jack Sparrow</h5>
-                  <small>2 January 2021, at 01:39 PM</small>
+                <div class="transaction-history">
+                    <div class="title-block">
+                        <h2>Transaction history</h2>
+
+                        <div class="icon-block">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <!-- .title-block -->
+                    <div class="date">
+                        <p>21 January 2021</p>
+                    </div>
+                    <div class="transaction-desc">
+                        <div class="item">
+                            <div class="purpose">
+                                <h5>John Doe</h5>
+                                <small>4 January 2021, at 10:45 AM</small>
+                            </div>
+                            <div class="amount">
+                                <h5 class="comes-in">+ $450.00</h5>
+                                <small>Payment</small>
+                            </div>
+                        </div>
+                        <!-- .item -->
+
+                        <div class="item">
+                            <div class="purpose">
+                                <h5>Jane Doe</h5>
+                                <small>3 January 2021, at 02:30 PM</small>
+                            </div>
+                            <div class="amount">
+                                <h5 class="goes-out">- $250.00</h5>
+                                <small>Transfer</small>
+                            </div>
+                        </div>
+                        <!-- .item -->
+
+                        <div class="item">
+                            <div class="purpose">
+                                <h5>Jack Sparrow</h5>
+                                <small>2 January 2021, at 01:39 PM</small>
+                            </div>
+                            <div class="amount">
+                                <h5 class="goes-out">- $1250.00</h5>
+                                <small>Transfer</small>
+                            </div>
+                        </div>
+                        <!-- .item -->
+                    </div>
                 </div>
-                <div class="amount">
-                  <h5 class="goes-out">- $1250.00</h5>
-                  <small>Transfer</small>
-                </div>
-              </div>
-              <!-- .item -->
             </div>
-          </div>
+            <!-- .col-6 -->
+        </div>
+    </main>
+
+
+
+    <!-- Calandar UI-->
+    <div class="calendar-ui">
+        <div class="content-block">
+            <div class="month-year-panel">
+                <div class="month">
+                    <select name="months" id="">
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="august">August</option>
+                        <option value="september">September</option>
+                        <option value="october">October</option>
+                        <option value="november">November</option>
+                        <option value="december">December</option>
+                    </select>
+                </div> <!-- .month -->
+
+                <div class="year">
+                    <select name="" id="">
+                        <option value="">2020</option>
+                        <option value="" selected>2021</option>
+                        <option value="">2022</option>
+                        <option value="">2023</option>
+                        <option value="">2024</option>
+                        <option value="">2025</option>
+                        <option value="">2026</option>
+                    </select>
+                </div>
+            </div> <!-- .month-year-panel -->
+
+            <div class="day-date-panel">
+                <div class="day">
+                    <ul>
+                        <li>Su</li>
+                        <li>Mo</li>
+                        <li>Tu</li>
+                        <li>We</li>
+                        <li>Th</li>
+                        <li>Fr</li>
+                        <li>Sa</li>
+                    </ul>
+                </div>
+                <div class="date">
+                    <ul>
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                        <li>07</li>
+                        <li>08</li>
+                        <li>09</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li class="current">21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                        <li>31</li>
+                    </ul>
+                </div> <!-- .date -->
+                
+                <div class="time-panel">
+                    <input type="text" placeholder="HR-MM AM/PM" class="form-control" onfocus="this.type='time'" onblur="this.type='text'">
+                </div>
+            </div>
         </div>
         <!-- .col-6 -->
       </div>
