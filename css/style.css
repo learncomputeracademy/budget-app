@@ -730,6 +730,106 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     margin-left: 2.5rem;
 }
 
+/*User Profile*/
+.user-profile {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    border: .1rem solid #dcdcdc;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    background: #fff;
+}
+
+.user-profile .image-block {
+    position: relative;
+    background-image: url('../images/profile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20rem;
+}
+
+.user-profile .image-block .edit-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.user-profile .image-block .edit-icon label {
+    display: block;
+    background-color: #fff;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile .image-block .edit-icon label>i.fas {
+    color: var(--blue);
+    font-size: 1.6rem;
+}
+
+.user-profile .image-block .edit-icon input {
+    display: none;
+}
+
+.user-profile .user-details{
+    padding: 2.5rem 0 0 0;
+}
+
+.user-profile .user-details h2{
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    padding: 0;
+    margin: 0;
+}
+
+.user-profile .user-details p{
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #aaa;
+    line-height: var(--lh);
+    user-select: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.user-profile .user-details .done{
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: var(--lh);
+    background-color: var(--blue);
+    border: none;
+    padding: .8rem 2rem;
+    margin: 2rem 0 0 0;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--trans);
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.user-profile .user-details .done:active{
+    transform: scale(.9);
+}
+
+.user-profile .user-details .done:focus{
+    outline: none;
+}
+
+
 
 
 
