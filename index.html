@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-  <body class="defuse">
+<body>
     <main>
         <div class="menu-bar">
             <div class="brand">
@@ -49,40 +49,28 @@
                     </a>
                 </li>
             </ul>
-          </div>
-        </header>
-
-        <div class="col-6">
-          <div class="daily-transaction">
-            <div class="title-block">
-              <h2>Daily Transaction</h2>
-
-              <div class="icon-block">
-                <a href="#"><i class="far fa-calendar-alt"></i></a>
-                <a href="#" id="add-transaction"
-                  ><i class="fas fa-plus-circle"></i
-                ></a>
-              </div>
-            </div>
-            <!-- .title-block -->
-
-            <div class="amount-block">
-              <div class="block">
-                <small>Total Expense</small>
-                <h4>$742.56</h4>
-              </div>
-              <div class="block">
-                <small>Total Income</small>
-                <h4>$120.56</h4>
-              </div>
-              <div class="block">
-                <small>Net</small>
-                <h4>$122.56</h4>
-              </div>
-            </div>
-            <!-- .amount-block -->
-          </div>
-          <!-- .daily-transaction -->
+        </div>
+        <div class="app-window">
+            <header>
+                <div class="title-block">
+                    <h2>Overview</h2>
+                    <p>Hi John, get your summary of your monthly transaction here</p>
+                </div>
+                <div class="user-block">
+                    <ul>
+                        <li>
+                            <a href="#" title="Notification"><i class="far fa-bell"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" title="Email"><i class="far fa-envelope"></i></a>
+                        </li>
+                        <li>
+                            <!--                            <a href="#" title="User"><i class="far fa-user"></i></a>-->
+                            <a href="#" title="User"><img src="images/user.jpg" alt="user" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
 
             <div class="col-6">
                 <div class="daily-transaction">
@@ -258,39 +246,21 @@
                 </div>
             </div>
         </div>
-        <!-- .col-6 -->
-      </div>
-    </main>
-    <div class="add-transaction-section" id="add-transaction-section">
-      <div class="block">
-        <button class="close-button">
-          <i class="fas fa-times-circle"></i>
+        
+        <button class="calendar-close">
+            <i class="fas fa-times-circle"></i>
         </button>
-        <h4>transaction on</h4>
-        <h2>20th Jan, 2020 @ 01:16PM</h2>
-
-        <div class="form-block">
-          <label>transaction name </label>
-          <input type="text" class="tr-input" />
-          <div class="radio-box">
-            <div class="box">
-              <label for="received">received</label>
-              <input type="radio" name="tr" id="received" />
-            </div>
-            <div class="box">
-              <label for="spent">spent</label>
-              <input type="radio" name="tr" id="spent" />
-            </div>
-            <div class="bottom-block">
-              <div class="amount-section">
-                <label>Amount</label>
-                <input type="number" class="tr-input number" />
-              </div>
-              <button id="save-transaction">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+
+
+
+
+
+
+
+
+
+
+</body>
+
 </html>
