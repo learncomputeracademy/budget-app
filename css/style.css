@@ -22,12 +22,10 @@ body {
   background-color: var(--light-blue);
   padding: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 ul,
@@ -45,8 +43,32 @@ a:hover {
   color: var(--dark-blue);
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-2 {
+  width: 16.6666%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-10 {
+  width: 83.3333%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .col-6 {
   width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 /*Main Section Start*/
@@ -75,27 +97,15 @@ main .brand {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: var(--blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto 4rem auto;
 }
 
 main .brand a {
   display: block;
-  font-family: inherit;
-  font-size: 2.5rem;
-  color: #fff;
-  line-height: var(--lh);
-  background: var(--blue);
-  font-weight: 800;
-  padding: 0;
-  margin: 0;
 }
 
 main .menu-bar ul li {
-  border-radius: var(--radius);
+  border-radius: 50%;
   margin: 0 0 1.5rem 0;
 }
 
@@ -104,7 +114,7 @@ main .menu-bar ul li a {
   width: var(--size);
   height: var(--size);
   color: var(--dark-blue);
-  border-radius: var(--radius);
+  border-radius: 50%;
   padding: 2rem;
   transition: var(--trans);
 }
@@ -113,6 +123,11 @@ main .menu-bar ul li a.active,
 main .menu-bar ul li a:hover {
   background-color: var(--blue);
   color: #fff;
+  box-shadow: var(--shadow);
+}
+
+main .menu-bar ul li a:active {
+  transform: scale(0.95);
 }
 
 /*App Window*/
@@ -126,6 +141,8 @@ main .app-window header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid #dcdcdc;
 }
 
 main .app-window header .title-block h2 {
@@ -162,8 +179,9 @@ main .app-window header .user-block ul li a {
 
 main .app-window header .user-block ul li a img {
   width: 3.5rem;
-  height: auto;
-  border-radius: 1rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 main .app-window header .user-block ul li a:hover {
@@ -312,6 +330,10 @@ main .app-window .transaction-history .transaction-desc .item .purpose h5 {
   padding: 0;
 }
 
+main .app-window .transaction-history .transaction-desc .item .amount {
+  text-align: right;
+}
+
 main .app-window .transaction-history .transaction-desc .item .amount h5 {
   font-family: inherit;
   font-size: 1.4rem;
@@ -351,6 +373,7 @@ main
   margin: 0 3rem;
   box-shadow: var(--shadow);
   position: absolute;
+  z-index: 9;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -393,3 +416,597 @@ body.defuse main:after {
   left: 0;
   backdrop-filter: saturate(180%) blur(5px);
 }
+
+/*Calendar UI*/
+.calendar-ui {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-ui .content-block {
+  width: 100%;
+}
+
+.calendar-ui .content-block .month-year-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin: 0;
+  border-bottom: 0.1rem solid #dcdcdc;
+}
+
+.calendar-ui .content-block .month-year-panel .month {
+  width: calc(50% - 0.5rem);
+  position: relative;
+}
+
+.calendar-ui .content-block .month-year-panel .month select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 0.1rem solid var(--blue);
+  border-radius: 0.6rem;
+  outline: 0;
+  width: 13rem;
+  background: none;
+  padding: 0.6rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: var(--lh);
+  margin-right: 0.5rem;
+  width: 100%;
+}
+
+.calendar-ui .content-block .month-year-panel .month::after {
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 0.5rem;
+  right: 8%;
+  background: none;
+  cursor: pointer;
+  pointer-events: none;
+  color: #444;
+  font-weight: 900;
+}
+
+.calendar-ui .content-block .month-year-panel .year {
+  width: calc(50% - 0.5rem);
+  position: relative;
+}
+
+.calendar-ui .content-block .month-year-panel .year select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 0.1rem solid var(--blue);
+  border-radius: 0.6rem;
+  outline: 0;
+  width: 13rem;
+  background: none;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: var(--lh);
+  padding: 0.6rem;
+  width: 100%;
+}
+
+.calendar-ui .content-block .month-year-panel .year::after {
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 0.5rem;
+  right: 8%;
+  background: none;
+  cursor: pointer;
+  pointer-events: none;
+  color: #444;
+  font-weight: 900;
+}
+
+.calendar-ui .content-block .day-date-panel {
+  padding: 0;
+  margin: 0;
+}
+
+.calendar-ui .content-block .day-date-panel .day ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-ui .content-block .day-date-panel .day ul li {
+  color: #444;
+  padding: 0.8rem;
+}
+
+.calendar-ui .content-block .day-date-panel .date {
+  padding: 1.2rem 0;
+}
+
+.calendar-ui .content-block .day-date-panel .date ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  place-items: center;
+}
+
+.calendar-ui .content-block .day-date-panel .date ul li {
+  transition: var(--trans);
+  cursor: pointer;
+  border-radius: var(--radius);
+  width: 4.1rem;
+  height: 4.1rem;
+  text-align: center;
+  line-height: 4.1rem;
+}
+
+.calendar-ui .content-block .day-date-panel .date ul li.current,
+.calendar-ui .content-block .day-date-panel .date ul li:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.calendar-ui .content-block .day-date-panel .time-panel {
+  padding: 1.5rem 0;
+  border-top: 0.1rem solid #dcdcdc;
+}
+
+.calendar-ui
+  .content-block
+  .day-date-panel
+  .time-panel
+  input.form-control[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  position: relative;
+  background: none;
+  padding: 0.5rem;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #444;
+  line-height: var(--lh);
+  padding: 0.5rem;
+  border: 0.1rem solid var(--blue);
+  border-radius: 0.6rem;
+}
+
+.calendar-ui
+  .content-block
+  .day-date-panel
+  .time-panel
+  input.form-control[type="time"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  position: relative;
+  background: none;
+  padding: 0.5rem;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: var(--lh);
+  padding: 0.5rem;
+  border: 0.1rem solid var(--blue);
+  border-radius: 0.6rem;
+}
+
+.calendar-ui
+  .content-block
+  .day-date-panel
+  .time-panel
+  .form-control[type="time"]:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #444;
+}
+
+.calendar-ui
+  .content-block
+  .day-date-panel
+  .time-panel
+  input.form-control[type="text"]::after {
+  content: "\f017";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 0;
+  right: 8%;
+  background: none;
+  cursor: pointer;
+  pointer-events: none;
+  color: #444;
+  font-weight: 900;
+}
+
+.calendar-ui .calendar-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: var(--trans);
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+}
+
+.calendar-ui .calendar-close i.fas {
+  border-radius: 50%;
+  display: block;
+}
+
+.calendar-ui .calendar-close:active {
+  transform: scale(0.9);
+}
+
+.calendar-ui .calendar-close:focus {
+  outline: none;
+}
+
+/*Monthly Transaction Section*/
+
+main .app-window .monthly-transaction {
+  margin: 2.5rem 0;
+}
+
+main .app-window .monthly-transaction .title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .title-block h2 {
+  font-family: inherit;
+  font-size: 2rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  margin: 0;
+  padding: 0;
+}
+
+main .app-window .monthly-transaction .expense-block {
+  margin-left: -15px;
+  border-radius: var(--radius);
+  border: 0.1rem solid #dcdcdc;
+  padding: 1rem;
+}
+
+main .app-window .monthly-transaction .expense-block small {
+  display: block;
+  color: var(--orange);
+  margin-bottom: 2rem;
+}
+
+main .app-window .monthly-transaction .expense-block .chart {
+  margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .expense-block .chart span {
+  display: inline-block;
+  --height: 5rem;
+  height: var(--height);
+  width: 0.5rem;
+  background: var(--orange);
+  border-radius: 5rem;
+  margin: 0 0.2rem;
+}
+
+main .app-window .monthly-transaction .expense-block .amount h4 {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #000;
+  line-height: var(--lh);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+main .app-window .monthly-transaction .expense-block .amount small {
+  margin: 0;
+  color: var(--orange);
+}
+
+main .app-window .monthly-transaction .income-block {
+  margin-right: -15px;
+  border-radius: var(--radius);
+  border: 0.1rem solid #dcdcdc;
+  padding: 1rem;
+}
+
+main .app-window .monthly-transaction .income-block small {
+  display: block;
+  color: var(--blue);
+  margin-bottom: 2rem;
+}
+
+main .app-window .monthly-transaction .income-block .chart {
+  margin-bottom: 2.5rem;
+}
+
+main .app-window .monthly-transaction .income-block .chart span {
+  display: inline-block;
+  --height: 5rem;
+  height: var(--height);
+  width: 0.5rem;
+  background: var(--blue);
+  border-radius: 5rem;
+  margin: 0 0.2rem;
+}
+
+main .app-window .monthly-transaction .income-block .amount h4 {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #000;
+  line-height: var(--lh);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+main .app-window .monthly-transaction .income-block .amount small {
+  margin: 0;
+  color: var(--blue);
+}
+
+main .app-window .monthly-transaction .lower-block {
+  margin-top: 2.5rem;
+}
+
+main .app-window .monthly-transaction .lower-block .card {
+  border-radius: var(--radius);
+  border: 0.1rem solid #dcdcdc;
+  background-color: #faf7f5;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+main .app-window .monthly-transaction .lower-block .card .col-10 {
+  display: flex;
+  align-items: center;
+}
+
+main .app-window .monthly-transaction .lower-block .card .pie {
+  --height: 3.5rem;
+  --width: 3.5rem;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 50%;
+  background: var(--orange);
+  background-image: conic-gradient(#f0582e 47deg, #dcdcdc 0 360deg);
+}
+
+main .app-window .monthly-transaction .lower-block .card:nth-child(2) .pie {
+  --height: 3.5rem;
+  --width: 3.5rem;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 50%;
+  background: var(--orange);
+  background-image: conic-gradient(#3546ab 120deg, #dcdcdc 0 360deg);
+}
+
+main .app-window .monthly-transaction .lower-block .card .amount {
+  margin-left: 2.5rem;
+}
+
+/*User Profile*/
+.user-profile {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: 0.1rem solid #dcdcdc;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.user-profile .image-block {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20rem;
+}
+
+.user-profile .image-block .edit-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.user-profile .image-block .edit-icon label {
+  display: block;
+  background-color: #fff;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile .image-block .edit-icon label > i.fas {
+  color: var(--blue);
+  font-size: 1.6rem;
+}
+
+.user-profile .image-block .edit-icon input {
+  display: none;
+}
+
+.user-profile .user-details {
+  padding: 2.5rem 0 0 0;
+}
+
+.user-profile .user-details h2 {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  padding: 0;
+  margin: 0;
+}
+
+.user-profile .user-details p {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #aaa;
+  line-height: var(--lh);
+  user-select: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-profile .user-details .done {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #fff;
+  line-height: var(--lh);
+  background-color: var(--blue);
+  border: none;
+  padding: 0.8rem 2rem;
+  margin: 2rem 0 0 0;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--trans);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.user-profile .user-details .done:active {
+  transform: scale(0.9);
+}
+
+.user-profile .user-details .done:focus {
+  outline: none;
+}
+
+/*Registration page CSS*/
+
+.registration {
+  border: 0.1rem solid #dcdcdc;
+  padding: 3rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.registration .logo-block {
+  width: 6rem;
+  margin: 0 auto;
+}
+
+.registration form {
+  text-align: center;
+}
+
+.registration form .title-block {
+  margin-bottom: 2.5rem;
+}
+
+.registration form .title-block h1 {
+  font-family: inherit;
+  font-size: 2.5rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.registration form .input-group {
+  margin-bottom: 2rem;
+}
+
+.registration form .input-group .form-control {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: var(--blue);
+  line-height: var(--lh);
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 0.1rem solid #dcdcdc;
+  border-radius: 0.5rem;
+  transition: var(--trans);
+}
+
+.registration form .input-group .form-control:focus {
+  border: 0.1rem solid var(--blue);
+  outline: none;
+}
+
+.registration form .input-group .btn {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #fff;
+  line-height: var(--lh);
+  background-color: var(--blue);
+  width: 100%;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--trans);
+}
+
+.registration form .input-group .btn:hover {
+  box-shadow: var(--shadow);
+}
+
+.registration form .input-group .btn:active {
+  transform: scale(0.9);
+}
+
+.registration form .user-guide p {
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: #222;
+  line-height: var(--lh);
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.registration form .user-guide p a {
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: var(--trans);
+}
+
+.registration form .user-guide p a:hover {
+  border-bottom: 1px solid var(--blue);
+}
+
+/**/
