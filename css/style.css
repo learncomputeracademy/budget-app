@@ -47,16 +47,19 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
 }
-.col-2{
+
+.col-2 {
     width: 16.6666%;
     padding-right: 15px;
     padding-left: 15px;
 }
-.col-10{
+
+.col-10 {
     width: 83.3333%;
     padding-right: 15px;
     padding-left: 15px;
 }
+
 .col-6 {
     width: 50%;
     padding-right: 15px;
@@ -697,10 +700,12 @@ main .app-window .monthly-transaction .lower-block .card {
     padding: 1rem;
     margin-bottom: 2rem;
 }
-main .app-window .monthly-transaction .lower-block .card .col-10{
+
+main .app-window .monthly-transaction .lower-block .card .col-10 {
     display: flex;
     align-items: center;
 }
+
 main .app-window .monthly-transaction .lower-block .card .pie {
     --height: 3.5rem;
     --width: 3.5rem;
@@ -721,21 +726,111 @@ main .app-window .monthly-transaction .lower-block .card:nth-child(2) .pie {
     background-image: conic-gradient(#3546AB 120deg, #dcdcdc 0 360deg);
 }
 
-main .app-window .monthly-transaction .lower-block .card .amount{
+main .app-window .monthly-transaction .lower-block .card .amount {
     margin-left: 2.5rem;
 }
 
 
 
 
+/*Registration page CSS*/
+
+.registration {
+    border: .1rem solid #dcdcdc;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    background: #fff;
+}
+
+.registration .logo-block {
+    width: 6rem;
+    margin: 0 auto;
+}
+
+.registration form {
+    text-align: center;
+}
+
+.registration form .title-block {
+    margin-bottom: 2.5rem;
+}
+
+.registration form .title-block h1 {
+    font-family: inherit;
+    font-size: 2.5rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.registration form .input-group {
+    margin-bottom: 2rem;
+}
+
+.registration form .input-group .form-control {
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--blue);
+    line-height: var(--lh);
+    width: 100%;
+    height: 4rem;
+    padding: .5rem 1rem;
+    background: #fff;
+    border: .1rem solid #dcdcdc;
+    border-radius: .5rem;
+    transition: var(--trans);
+}
+
+.registration form .input-group .form-control:focus {
+    border: .1rem solid var(--blue);
+    outline: none;
+}
 
 
+.registration form .input-group .btn {
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: var(--lh);
+    background-color: var(--blue);
+    width: 100%;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: var(--trans);
+}
 
+.registration form .input-group .btn:hover {
+    box-shadow: var(--shadow);
+}
 
+.registration form .input-group .btn:active {
+    transform: scale(.9);
+}
 
+.registration form .user-guide p {
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: #222;
+    line-height: var(--lh);
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
 
+.registration form .user-guide p a {
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: var(--trans);
+}
 
-
+.registration form .user-guide p a:hover {
+    border-bottom: 1px solid var(--blue);
+}
 
 
 
