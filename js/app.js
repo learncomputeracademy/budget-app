@@ -99,15 +99,57 @@ calDateButtons.querySelectorAll("a").forEach((anc, idx) => {
         onChange: showDate,
       });
       function showDate(e) {
+        const date = e[0];
         const dateTimeTitle = addTransactionSection.querySelector("h2");
-
-        console.log(e[0]);
+        dateTimeTitle.innerText = userFriendlyDate(date);
+        console.log(date);
         console.log(localStorage.getItem("trDate"));
       }
       body.className = "defuse";
     }
   });
 });
+
+function userFriendlyDate(date) {
+  function ordinal_suffix_of(i) {
+    var j = i % 10,
+      k = i % 100;
+    if (j == 1 && k != 11) {
+      return i + "st";
+    }
+    if (j == 2 && k != 12) {
+      return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+      return i + "rd";
+    }
+    return i + "th";
+  }
+  const month_names_short = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let hour = date.getHours() <= 12 ? date.getHours() : date.getHours() - 12;
+  hour = hour < 10 ? "0" + hour : hour;
+  let min = date.getMinutes();
+  min = min < 10 ? "0" + min : min;
+  const ampm = date.getHours() < 12 ? "AM" : "PM";
+
+  return `${ordinal_suffix_of(date.getDate())}  ${
+    month_names_short[date.getMonth()]
+  }, ${date.getFullYear()}	@ ${hour}:${min} ${ampm}`;
+}
 
 function closeUI(sectionName) {
   sectionName.remove();
@@ -121,7 +163,7 @@ function makeTransactionSection() {
           <i class="fas fa-times-circle"></i>
         </button>
         <h4>transaction on</h4>
-        <h2>20th Jan, 2020 @ 01:16PM</h2>
+        <h2>${userFriendlyDate(new Date())}</h2>
         <input
         class="flatpickr flatpickr-input active"
         id="datetime"
