@@ -2,10 +2,30 @@ const calDateButtons = document.querySelector("#cal-date-buttons");
 const body = document.body;
 const main = document.querySelector("main");
 const userprofileBtn = document.querySelector("#user-profile-btn");
+let userName = localStorage.getItem("userName");
 sessionStorage.removeItem("profileBlob");
+
+generateFirstLine();
+
+function generateFirstLine() {
+  userName = localStorage.getItem("userName");
+  if (!userName) {
+    userName = "RandomUser";
+  }
+  const titleBlock = main.querySelector("header .app-subtitle");
+  titleBlock.innerHTML = "";
+  const title = document.createElement("p");
+  title.innerHTML = `Hi <span>${userName.replace(
+    / .*/,
+    ""
+  )}</span>, get your summary of your monthly
+              transaction here.`;
+  titleBlock.appendChild(title);
+}
 
 userprofileBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  let userName = "";
   const userProfile = document.createElement("div");
   userProfile.className = "user-profile";
   userProfile.innerHTML = makeUserProfile();
@@ -26,7 +46,13 @@ userprofileBtn.addEventListener("click", (e) => {
     )}`;
   });
   userProfile.querySelector("button.done").addEventListener("click", () => {
+    userName = userProfile.querySelector("h2").innerText;
+    localStorage.setItem("userName", userName);
     closeUI(userProfile);
+    generateFirstLine();
+  });
+  userProfile.querySelector("h2").addEventListener("click", (e) => {
+    e.target.setAttribute("contenteditable", "true");
   });
 });
 
@@ -211,7 +237,7 @@ function makeUserProfile() {
       </div>
 
       <div class="user-details">
-        <h2>Amarta Dey</h2>
+        <h2>${userName ? userName : "Random User"}</h2>
         <p>example@gmail.com</p>
         <button class="done">Done</button>
       </div>
