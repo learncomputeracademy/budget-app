@@ -604,7 +604,7 @@ body.defuse main:after {
 
   font-family: inherit;
   font-size: 1.4rem;
-  color: #fff;
+  color: #444;
   line-height: var(--lh);
   padding: 0.5rem;
   border: 0.1rem solid var(--blue);
