@@ -451,7 +451,7 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 .add-transaction-section .block .form-block .radio-box {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     flex-wrap: wrap;
 }
 
@@ -573,6 +573,7 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 
 .flatpickr-calendar.open {
     border-radius: var(--radius);
+    overflow: hidden;
 }
 
 .flatpickr-months {
@@ -602,9 +603,38 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     font-weight: 400;
 }
 
+span.flatpickr-weekday {
+    color: var(--blue);
+}
+
 .flatpickr-day.today {
     background: var(--blue);
     color: #fff;
+}
+
+.flatpickr-calendar.hasTime .flatpickr-time {
+    background-color: var(--blue);
+}
+
+.flatpickr-time input.flatpickr-hour {
+    color: #fff;
+}
+
+.flatpickr-time input.flatpickr-minute,
+.flatpickr-time input.flatpickr-second {
+    color: #fff;
+}
+
+.flatpickr-time .flatpickr-time-separator,
+.flatpickr-time .flatpickr-am-pm {
+    color: #fff;
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+    background: var(--blue);
 }
 
 .close-button {
