@@ -1030,7 +1030,6 @@ main .app-window .monthly-transaction .lower-block .card .amount {
 /*User Profile*/
 .user-profile {
     position: absolute;
-    z-index: 9;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -1040,6 +1039,8 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     box-shadow: var(--shadow);
     border-radius: var(--radius);
     background: #fff;
+    min-width: 30rem;
+    animation: zoom .3s forwards ease-in;
 }
 
 .user-profile .image-block {
@@ -1052,8 +1053,8 @@ main .app-window .monthly-transaction .lower-block .card .amount {
 
 .user-profile .image-block .edit-icon {
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 2%;
+    top: 2%;
 }
 
 .user-profile .image-block .edit-icon label {
