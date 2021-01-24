@@ -169,14 +169,14 @@ function makeTransactionSection() {
         class="flatpickr flatpickr-input active"
         id="datetime"
         type="text"
-        placeholder="Select Date.."
+        placeholder="Select Transaction Date"
         data-id="datetime"
         readonly="readonly"
       />
         
         <div class="form-block">
-          <label>Transaction Purpose</label>
-          <input type="text" class="tr-input" />
+          <label for="purpose">Transaction Purpose</label>
+          <input type="text" class="tr-input" id="purpose"/>
           <div class="radio-box">
             <div class="box">
               <label for="received">Received</label>
@@ -188,8 +188,8 @@ function makeTransactionSection() {
             </div>
             <div class="bottom-block">
               <div class="amount-section">
-                <label>Amount</label>
-                <input type="number" class="tr-input number" />
+                <label for="number">Amount</label>
+                <input type="number" class="tr-input number" id="number"/>
               </div>
             </div>
           </div>

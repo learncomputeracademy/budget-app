@@ -432,10 +432,20 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 }
 
 .add-transaction-section .block .form-block input.tr-input {
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #222;
+    line-height: var(--lh);
     width: 100%;
     padding: 1rem;
     border: 1px solid #aaa;
     border-radius: 6px;
+    transition: var(--trans);
+}
+
+.add-transaction-section .block .form-block input.tr-input:focus {
+    outline: none;
+    border: 1px solid var(--blue);
 }
 
 .add-transaction-section .block .form-block .radio-box {
@@ -446,7 +456,7 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
 }
 
 .add-transaction-section .block .form-block .radio-box .box {
-/*    width: 32%;*/
+    /*    width: 32%;*/
     padding: 1rem 0;
 }
 
@@ -461,6 +471,47 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     padding: 0;
 }
 
+.add-transaction-section .block .form-block .radio-box .box > input#received,
+.add-transaction-section .block .form-block .radio-box .box > input#spent {
+    display: block;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    transition: var(--trans);
+}
+
+.add-transaction-section .block .form-block .radio-box .box > input#received:focus,
+.add-transaction-section .block .form-block .radio-box .box > input#spent:focus {
+    outline: none;
+    border: 1px solid var(--blue);
+}
+
+.add-transaction-section .block .form-block .radio-box .box > input#received:focus::after,
+.add-transaction-section .block .form-block .radio-box .box > input#spent:focus::after {
+    transition: var(--trans);
+}
+
+.add-transaction-section .block .form-block .radio-box .box > input#received:focus::after,
+.add-transaction-section .block .form-block .radio-box .box > input#spent:focus::after {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background: var(--blue);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+
+}
+
 .add-transaction-section .block .form-block .radio-box .bottom-block .amount-section > label {
     display: block;
     font-family: inherit;
@@ -472,8 +523,32 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     padding: 0;
 }
 
-.add-transaction-section .block .form-block .radio-box .bottom-block .amount-section{
-/*    width: 100%*/
+.add-transaction-section .block .form-block .radio-box .bottom-block .amount-section {
+    /*    width: 100%*/
+}
+
+.add-transaction-section .block .form-block button#save-transaction {
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: var(--lh);
+    background-color: var(--blue);
+    border: none;
+    padding: 0.8rem 2rem;
+    margin: 2rem 0 0 0;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--trans);
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.add-transaction-section .block .form-block button#save-transaction:focus {
+    outline: none;
+}
+
+.add-transaction-section .block .form-block button#save-transaction:active {
+    transform: scale(.9);
 }
 
 .add-transaction-section .block .flatpickr-input[readonly] {
@@ -488,6 +563,12 @@ main .app-window .transaction-history .transaction-desc .item .amount h5.goes-ou
     width: 100%;
     cursor: pointer;
     margin: 2rem 0;
+    transition: var(--trans);
+}
+
+.add-transaction-section .block .flatpickr-input[readonly]:focus {
+    outline: none;
+    border: 1px solid var(--blue);
 }
 
 .flatpickr-calendar.open {
