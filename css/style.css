@@ -105,29 +105,34 @@ main .brand a {
 }
 
 main .menu-bar ul li {
-    border-radius: 50%;
     margin: 0 0 1.5rem 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+main .menu-bar ul li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 main .menu-bar ul li a {
-    --size: 60px;
-    width: var(--size);
-    height: var(--size);
-    color: var(--dark-blue);
-    border-radius: 50%;
-    padding: 2rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #7e8cac;
+    line-height: var(--lh);
+    font-weight: 400;
+    padding: 2rem 0;
+    margin: 0;
     transition: var(--trans);
 }
 
 main .menu-bar ul li a.active,
 main .menu-bar ul li a:hover {
-    background-color: var(--blue);
-    color: #fff;
-    box-shadow: var(--shadow);
+    color: var(--dark-blue);
 }
 
-main .menu-bar ul li a:active {
-    transform: scale(0.95);
+main .menu-bar ul li a i.fas {
+    display: block;
+    margin-bottom: 1rem;
 }
 
 /*App Window*/
@@ -135,6 +140,7 @@ main .app-window {
     background-color: #fff;
     padding: 2rem 4rem;
     border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: -.4rem 0 1rem rgba(0, 0, 0, .05);
 }
 
 main .app-window header {
@@ -1118,8 +1124,11 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     font-size: 1.6rem;
     color: var(--blue);
     line-height: var(--lh);
-    padding: 0;
-    margin: 0;
+    border: .1rem solid #dcdcdc;
+    border-radius: .6rem;;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    transition: var(--trans);
 }
 
 .user-profile .user-details p {
@@ -1127,9 +1136,16 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     font-size: 1.6rem;
     color: #aaa;
     line-height: var(--lh);
-    user-select: none;
-    padding: 0;
-    margin: 0;
+    border: .1rem solid #dcdcdc;
+    border-radius: .6rem;;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    transition: var(--trans);
+}
+.user-profile .user-details h2:focus,
+.user-profile .user-details p:focus {
+    border: .1rem solid var(--blue);
+    outline: none;
 }
 
 .user-profile .user-details .done {
