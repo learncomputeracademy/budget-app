@@ -11,121 +11,122 @@ sessionStorage.removeItem("profileBlob");
 generateFirstLine();
 
 function generateFirstLine() {
-  userName = localStorage.getItem("userName");
-  if (!userName) {
-    userName = "RandomUser";
-  }
-  const titleBlock = main.querySelector("header .app-subtitle");
-  titleBlock.innerHTML = "";
-  const title = document.createElement("p");
-  title.innerHTML = `Hi <span>${userName.replace(
+    userName = localStorage.getItem("userName");
+    if (!userName) {
+        userName = "RandomUser";
+    }
+    const titleBlock = main.querySelector("header .app-subtitle");
+    titleBlock.innerHTML = "";
+    const title = document.createElement("p");
+    title.innerHTML = `Hi <span>${userName.replace(
     / .*/,
     ""
   )}</span>, get your summary of your monthly
               transaction here.`;
-  titleBlock.appendChild(title);
+    titleBlock.appendChild(title);
 }
 
 userprofileBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let userName = "";
-  const userProfile = document.createElement("div");
-  userProfile.className = "user-profile";
-  userProfile.innerHTML = makeUserProfile();
-  main.appendChild(userProfile);
-  body.className = "defuse";
-  const file = userProfile.querySelector("input");
-  const img = userProfile.querySelector(".image-block");
-  file.addEventListener("input", (e) => {
-    sessionStorage.setItem(
-      "profileBlob",
-      URL.createObjectURL(e.target.files[0])
-    );
-    img.style.backgroundImage = `url(${URL.createObjectURL(
+    e.preventDefault();
+    let userName = "";
+    const userProfile = document.createElement("div");
+    userProfile.className = "user-profile";
+    userProfile.innerHTML = makeUserProfile();
+    main.appendChild(userProfile);
+    body.className = "defuse";
+    const file = userProfile.querySelector("input");
+    const img = userProfile.querySelector(".image-block");
+    file.addEventListener("input", (e) => {
+        sessionStorage.setItem(
+            "profileBlob",
+            URL.createObjectURL(e.target.files[0])
+        );
+        img.style.backgroundImage = `url(${URL.createObjectURL(
       e.target.files[0]
     )})`;
-    userprofileBtn.querySelector("img").src = `${URL.createObjectURL(
+        userprofileBtn.querySelector("img").src = `${URL.createObjectURL(
       e.target.files[0]
     )}`;
-  });
-  userProfile.querySelector("button.done").addEventListener("click", () => {
-    userName = userProfile.querySelector("h2").innerText;
-    userEmail = userProfile.querySelector("p").innerText;
-    localStorage.setItem("userName", userName);
-    localStorage.setItem("userEmail", userEmail);
-    closeUI(userProfile);
-    generateFirstLine();
-  });
-  userProfile.querySelector("h2").addEventListener("click", (e) => {
-    e.target.setAttribute("contenteditable", "true");
-    e.target.focus();
-  });
-  userProfile.querySelector("p").addEventListener("click", (e) => {
-    e.target.setAttribute("contenteditable", "true");
-    e.target.focus();
-  });
+    });
+    userProfile.querySelector("button.done").addEventListener("click", () => {
+        userName = userProfile.querySelector("h2").innerText;
+        userEmail = userProfile.querySelector("p").innerText;
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("userEmail", userEmail);
+        closeUI(userProfile);
+        generateFirstLine();
+    });
+    userProfile.querySelector("h2").addEventListener("click", (e) => {
+        e.target.setAttribute("contenteditable", "true");
+        e.target.focus();
+    });
+    userProfile.querySelector("p").addEventListener("click", (e) => {
+        e.target.setAttribute("contenteditable", "true");
+        e.target.focus();
+    });
 });
 
 calDateButtons.querySelectorAll("a").forEach((anc, idx) => {
-  anc.addEventListener("click", () => {
-    // if (idx == 0) {
-    //   const calenderUi = document.createElement("div");
-    //   calenderUi.className = "calendar-ui";
-    //   calenderUi.innerHTML = makeCalenderUi();
+    anc.addEventListener("click", () => {
+        // if (idx == 0) {
+        //   const calenderUi = document.createElement("div");
+        //   calenderUi.className = "calendar-ui";
+        //   calenderUi.innerHTML = makeCalenderUi();
 
-    //   const calenderUiclose = calenderUi.querySelector(".calendar-close");
+        //   const calenderUiclose = calenderUi.querySelector(".calendar-close");
 
-    //   calenderUiclose.addEventListener("click", () => {
-    //     closeUI(calenderUi);
-    //   });
-    //   main.appendChild(calenderUi);
-    //   calenderFunctionality();
-    // }
-    if (idx == 0) {
-      const addTransactionSection = document.createElement("div");
-      addTransactionSection.className = "add-transaction-section";
-      addTransactionSection.innerHTML = makeTransactionSection();
+        //   calenderUiclose.addEventListener("click", () => {
+        //     closeUI(calenderUi);
+        //   });
+        //   main.appendChild(calenderUi);
+        //   calenderFunctionality();
+        // }
+        if (idx == 0) {
+            const addTransactionSection = document.createElement("div");
+            addTransactionSection.className = "add-transaction-section";
+            addTransactionSection.innerHTML = makeTransactionSection();
 
-      const addTransactionClose = addTransactionSection.querySelector(
-        ".close-button"
-      );
-      addTransactionClose.addEventListener("click", () => {
-        closeUI(addTransactionSection);
-      });
-      main.appendChild(addTransactionSection);
-      flatpickr("#datetime", {
-        enableTime: true,
-        dateFormat: "J M, Y G:i K",
-        onChange: showDate,
-      });
-      function showDate(e) {
-        const date = e[0];
-        const dateTimeTitle = addTransactionSection.querySelector("h2");
-        dateTimeTitle.innerText = userFriendlyDate(date);
-        console.log(date);
-        console.log(localStorage.getItem("trDate"));
-      }
-      body.className = "defuse";
-    }
-  });
+            const addTransactionClose = addTransactionSection.querySelector(
+                ".close-button"
+            );
+            addTransactionClose.addEventListener("click", () => {
+                closeUI(addTransactionSection);
+            });
+            main.appendChild(addTransactionSection);
+            flatpickr("#datetime", {
+                enableTime: true,
+                dateFormat: "J M, Y G:i K",
+                onChange: showDate,
+            });
+
+            function showDate(e) {
+                const date = e[0];
+                const dateTimeTitle = addTransactionSection.querySelector("h2");
+                dateTimeTitle.innerText = userFriendlyDate(date);
+                console.log(date);
+                console.log(localStorage.getItem("trDate"));
+            }
+            body.className = "defuse";
+        }
+    });
 });
 
 function userFriendlyDate(date) {
-  function ordinal_suffix_of(i) {
-    var j = i % 10,
-      k = i % 100;
-    if (j == 1 && k != 11) {
-      return i + "st";
+    function ordinal_suffix_of(i) {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
     }
-    if (j == 2 && k != 12) {
-      return i + "nd";
-    }
-    if (j == 3 && k != 13) {
-      return i + "rd";
-    }
-    return i + "th";
-  }
-  const month_names_short = [
+    const month_names_short = [
     "Jan",
     "Feb",
     "Mar",
@@ -140,29 +141,29 @@ function userFriendlyDate(date) {
     "Dec",
   ];
 
-  let hour = date.getHours() <= 12 ? date.getHours() : date.getHours() - 12;
-  hour = hour < 10 ? "0" + hour : hour;
-  let min = date.getMinutes();
-  min = min < 10 ? "0" + min : min;
-  const ampm = date.getHours() < 12 ? "AM" : "PM";
+    let hour = date.getHours() <= 12 ? date.getHours() : date.getHours() - 12;
+    hour = hour < 10 ? "0" + hour : hour;
+    let min = date.getMinutes();
+    min = min < 10 ? "0" + min : min;
+    const ampm = date.getHours() < 12 ? "AM" : "PM";
 
-  return `${ordinal_suffix_of(date.getDate())}  ${
+    return `${ordinal_suffix_of(date.getDate())}  ${
     month_names_short[date.getMonth()]
   }, ${date.getFullYear()}	@ ${hour}:${min} ${ampm}`;
 }
 
 function closeUI(sectionName) {
-  sectionName.remove();
-  body.className = "";
+    sectionName.remove();
+    body.className = "";
 }
 
 function makeTransactionSection() {
-  return `
+    return `
       <div class="block">
         <button class="close-button">
           <i class="fas fa-times-circle"></i>
         </button>
-        <h4>transaction on</h4>
+        <h4>Transaction Details</h4>
         <h2>${userFriendlyDate(new Date())}</h2>
         <input
         class="flatpickr flatpickr-input active"
@@ -174,15 +175,15 @@ function makeTransactionSection() {
       />
         
         <div class="form-block">
-          <label>transaction name </label>
+          <label>Transaction Purpose</label>
           <input type="text" class="tr-input" />
           <div class="radio-box">
             <div class="box">
-              <label for="received">received</label>
+              <label for="received">Received</label>
               <input type="radio" name="tr" id="received" />
             </div>
             <div class="box">
-              <label for="spent">spent</label>
+              <label for="spent">Spent</label>
               <input type="radio" name="tr" id="spent" />
             </div>
             <div class="bottom-block">
@@ -190,9 +191,9 @@ function makeTransactionSection() {
                 <label>Amount</label>
                 <input type="number" class="tr-input number" />
               </div>
-              <button id="save-transaction">Save</button>
             </div>
           </div>
+              <button id="save-transaction">Save</button>
         </div>
       </div>
     `;
@@ -309,7 +310,7 @@ function makeTransactionSection() {
 // }
 
 function makeUserProfile() {
-  return `
+    return `
       <div class="image-block" style="background-image: url('${
         sessionStorage.getItem("profileBlob")
           ? sessionStorage.getItem("profileBlob")
