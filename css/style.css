@@ -1125,7 +1125,8 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     color: var(--blue);
     line-height: var(--lh);
     border: .1rem solid #dcdcdc;
-    border-radius: .6rem;;
+    border-radius: .6rem;
+    ;
     padding: 1rem;
     margin: 0 0 1rem 0;
     transition: var(--trans);
@@ -1137,11 +1138,13 @@ main .app-window .monthly-transaction .lower-block .card .amount {
     color: #aaa;
     line-height: var(--lh);
     border: .1rem solid #dcdcdc;
-    border-radius: .6rem;;
+    border-radius: .6rem;
+    ;
     padding: 1rem;
     margin: 0 0 1rem 0;
     transition: var(--trans);
 }
+
 .user-profile .user-details h2:focus,
 .user-profile .user-details p:focus {
     border: .1rem solid var(--blue);
